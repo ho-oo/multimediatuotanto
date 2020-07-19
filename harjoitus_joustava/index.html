@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Piirakkakaaviot</title>
+
+<style>
+
+.pie {
+  position: relative;
+  width: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  background: yellowgreen;
+  background-image:
+    linear-gradient(to right, transparent 50%, #655 0);
+  color: transparent;
+  text-align: center;
+  position:relative;
+}
+
+@keyframes spin {
+  to { transform: rotate(.5turn); }
+}
+@keyframes bg {
+  50% { background: #655; }
+}
+
+.pie::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  width: 50%; height: 100%;
+  border-radius: 0 100% 100% 0 / 50%;
+  background-color: inherit;
+  transform-origin: left;
+  animation: spin 50s linear infinite,
+             bg 100s step-end infinite;
+  animation-play-state: paused;
+  animation-delay: inherit;
+}
+
+
+#tag{
+  front-size:28px;
+  background-color:black;
+  opacity: 0.5;
+  color: rgba(255,255,255,1.00);
+  font-family:alfa-slab-one;
+  font-style:normal;
+  font-weight:400
+  
+  }
+
+</style>
+
+</head>
+
+<body>
+
+<article>
+<h1>Opinto yksi</h1>
+<div class="pie" style="animation-delay: -20s"> <span id="tag">20%</span> </div>
+</article>
+
+<article>
+<h1>Opinto kaksi</h1>
+<div class="pie" style="animation-delay: -60s"> <span id="tag">60%</span>
+</div>
+</article>
+
+
+
+</body>
+</html>

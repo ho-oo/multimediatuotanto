@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+  
+	<link rel="stylesheet" type="text/css" href="../../oma_projekti - Copy/css/bootstrap.min.css">
+	<!-- oma tyylitiedosto -->
+	<link href="../../oma_projekti - Copy/login/css/styles.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <!-- Liitä tähän lomakekoodi -->
+	<div class="container">
+
+      <form class="form-signin" method="post" action="../../oma_projekti - Copy/login/login.php">
+        <h2 class="form-signin-heading">Kirjaudu sisään</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Sähköposti" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="salasana" id="inputPassword" class="form-control" placeholder="Salasana" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div> <!-- /container -->
+
+	<footer class="footer">
+    <div class="container">
+		<p class="text-muted">Arto Haapanen &copy;</p>
+    </div>
+</footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../../oma_projekti - Copy/login/js/bootstrap.min.js"></script>
+  </body>
+</html>

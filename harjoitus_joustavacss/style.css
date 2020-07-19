@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+
+.pie {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: yellowgreen;
+    position: relative;
+    font-size: xx-small;
+       
+}
+
+.pie::before{
+    content: '';
+    height: 100%;
+    display: block;
+    margin-left:50%;
+    border-radius: 0 100% 100% 0 / 50%;
+    background: #655;    
+    transform-origin: left;
+    transform: rotate(.turn);
+    
+}
+.pie::before{
+    /* [Rest of styling stays the same] */
+    animation: spin 50s linear infinite,
+    bg 100s step-end infinite;
+    animation-play-state: paused;
+    animation-delay: inherit;
+}
+
+@keyframes spin {
+    to { transform: rotate(.5turn);}
+}
+
+@keyframes bg {
+    50% { background: #655;}
+}
+
+
+     
+    
+
+h1 {
+    font-family: Tahoma, Geneva, sans-serif;
+}
+article {
+    float: left;
+}
+
+span {
+    margin: 0;
+    background: yellow;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(50%,-50%)}

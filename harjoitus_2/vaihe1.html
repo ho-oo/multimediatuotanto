@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS animation - Phase 1</title>
+<style>
+#cube {
+    background: #FF0000;
+    width: 100px;
+    height:100px;
+    -webkit-animation:mun_oma 10s;/*chrome, safari, opera*/
+    animation: mun_oma 10s;
+}
+
+/*chrome, safari, opera*/
+@-webkit-keyframes mun_oma {
+    0%  {background-color:red;}
+    25% {background-color:blue;}
+    50% {background-color:yellow;}
+    75% {background-color:green;}
+    100%    {background-color:red;}
+}
+
+/* Standard syntax */
+@keyframes mun_oma {
+    0%  {background-color:red;}
+    25% {background-color:blue;}
+    50% {background-color:yellow;}
+    75% {background-color:green;}
+    100%    {background-color:red;}
+      
+}
+
+</style>
+
+</head>
+
+<body>
+
+<p>
+    <b>Note:</b> When an animation is finished, it chenges back to its original style.
+
+</p>
+
+<section id="cube"></section>
+
+</body>
+</html>

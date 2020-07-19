@@ -1,0 +1,14 @@
+<?php
+
+//Otetaan lomakkeelta tulevat syötteet talteen
+$email = $_POST['email'];
+$salasana = $_POST['salasana'];
+
+//Määritetään yhteys tietokantaan
+include ("../../oma_projekti - Copy/login/funktioita.php");
+
+// Avataan yhteys tietokantaan - testaa heti
+$yhteys = yhdista_tietokantaan();
+
+
+?>

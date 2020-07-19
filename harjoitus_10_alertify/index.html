@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Alertify.js Demo</title>
+<link rel="stylesheet" href="alertify.core.css">
+<link rel="stylesheet" href="alertify.default.css" id="toggleCss" />
+<meta name="viewport" content="width=device-width initial-scale=1">
+<style>
+    .alertify-log-custom {
+        background: blue;
+    }
+        
+</style>
+</head>
+
+<body>
+    <h2>Default Dialogs</h2>
+        <a href="#" id="alert">Alert Dialog</a><br>
+        <a href="#" id="confirm">Confirm Dialog</a><br>  
+        <a href="#" id="prompt">Prompt Dialog</a><br>              
+        <a href="#" id="labels">Custom Labels</a><br>
+	    <a href="#" id="focus">Button Focus</a><br>
+	    <a href="#" id="order">Button Order</a>
+        
+    <script src="jquery-1.9.1.js"></script>
+    <script src="alertify.min.js"></script>
+    <script>
+        function reset (){
+            $("#toggleCSS").attr("href", "alertiry.default.css");
+            alertify.set({
+                labels : {
+                    ok      : "OK",
+                    cancel  : "Peru"
+                },
+                delay : 5000,
+                buttonReverse : false,
+                buttonForcus  : "ok"
+            });
+            
+        }
+        
+        // ==============================
+        // Alertify.js Demo
+        $("#alert").on('click', function () {
+            reset ();
+            alertify.alert("Tämä on huomautus");
+            return false;
+            
+        });
+   
+        
+    $("#confirm").on('click', function (){
+        reset();
+        alertify.set({ labels: { ok: "Hyväksyn", cancel: "Hylkään" } });
+        alertify.confirm("Keskusteluikkunassa muokatut tiedot (oletus: Hyväksyn)", function (e) {
+            if (e) {
+                alertify.sucsuccess("You've clicked OK");
+            } else {
+                alertify.error("Välitsit Hylkään");
+            }
+     
+    });
+    return false;
+    });
+    
+       $("#prompt").on('click', function () {
+       reset();
+       alertify.prompt("Tässä pyydetään käyttäjää täydentämään sisältö", function (e,str){
+           if (e) { 
+                alertify.success("Valitsit OK and typed: " + str);
+           } else {
+               alertify.error("Valitsit Peru");
+           }
+       }, "Default Value");
+       return false;    
+   });
+
+    
+    $("#labels").on('click', function () {
+        reset();
+        alertify.set({ labels: { ok: "Accept", cancel: "Peru" } });
+        alertify.confirm("Confirm dialog with custom button labels", function (e) {
+            if (e) {
+                alertify.success("You've clicked OK");
+            } else {
+                alertify.error("You've clicked Cancel");
+            }
+        });
+        return false;
+    });
+    
+    $("#focus").on('click', function () {
+        reset();
+        alertify.set({ buttonFosus: "Peru" });
+        alertify.confirm("Vahvista?", function (e) {
+            if (e) {
+                alertify.success("You've clicked OK");
+            } else {
+                alertify.error("Valitsit Peru");
+            }
+        });
+        return false;
+    });
+    
+    $("#order").on('click', function () {
+        reset();
+        alertify.confirm("Confirm?", function (e) {
+            if (e) {
+                alertify.alert("Onnistunut AJAX valinnan OK jälkeen");
+            } else {
+                alertify.alert("Onnistunut AJAX valinnan Peru jälkeen");
+            }
+        });
+        return false;
+    });
+            
+            
+      </script>
+    
+        
+</body>
+</html>

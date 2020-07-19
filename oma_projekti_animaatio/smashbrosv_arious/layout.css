@@ -1,0 +1,28 @@
+@charset "utf-8";
+#conteiner1 {
+    width: 300px;
+    border-width: 2px;
+    border-style: solid;
+}
+#conteiner1 ol li {
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    background-image: url(../../oma_projekti%20-%20Copy/image/smashbros_various30_080312d-l.jpg);
+
+
+
+
+
+}
+#conteiner2 ol li {
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+li:nth-child(odd) {
+    background: #16c1b9;
+    border-bottom-right-radius:20xp;
+}
